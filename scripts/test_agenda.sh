@@ -2,10 +2,10 @@
 
 MODEL_PATH=MODEL_FROM_BEST_DEV_EPOCH
 
-python -u ../finetune.py \
-    --data_dir ../dataset/agenda_baseline \
+python -u finetune.py \
+    --data_dir dataset/agenda_baseline \
     --model_name_or_path ${MODEL_PATH} \
-    --output_dir ../outputs/agenda_out \
+    --output_dir outputs/agenda_out \
     --max_source_length 100 \
     --max_target_length 200 \
     --val_max_target_length 200 \

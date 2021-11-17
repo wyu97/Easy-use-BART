@@ -2,10 +2,10 @@
 
 MODEL_PATH=MODEL_FROM_BEST_DEV_EPOCH
 
-python -u ../finetune.py \
-    --data_dir ../dataset/dailymail_baseline \
+python -u finetune.py \
+    --data_dir dataset/dailymail_baseline \
     --model_name_or_path ${MODEL_PATH} \
-    --output_dir ../outputs/dailymail_out \
+    --output_dir outputs/dailymail_out \
     --max_source_length 60 \
     --max_target_length 250 \
     --val_max_target_length 250 \

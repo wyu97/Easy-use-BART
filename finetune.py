@@ -267,9 +267,9 @@ def main():
                 eval_out.write(output_line + '\n')
 
         metrics = {'epoch': 'eval_mode'}
-        metrics.update(eval_top1_acc(out_pred_path, out_pred_ref, data_args.k_out)) ## top1_metrics
-        metrics.update(eval_topk_acc(out_pred_path, out_pred_ref, data_args.k_out))  ## topk_metrics
-        metrics.update(eval_diversity(out_pred_path, data_args.k_out)) ## diversity_metrics
+        metrics.update(eval_top1_acc(out_pred_path, out_pred_ref, data_args.eval_beams)) ## top1_metrics
+        metrics.update(eval_topk_acc(out_pred_path, out_pred_ref, data_args.eval_beams))  ## topk_metrics
+        metrics.update(eval_diversity(out_pred_path, data_args.eval_beams)) ## diversity_metrics
 
         with open(out_pred_metric, 'w') as metric_out:
             json.dump(metrics, metric_out, indent=1)
