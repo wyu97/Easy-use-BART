@@ -144,11 +144,17 @@ if __name__ == "__main__":
 
     cur_dir = os.path.join(os.getcwd(), 'dataset')
     if args.agenda:
+        if not os.path.exists(os.path.join(cur_dir, 'agenda_baseline')):
+            os.mkdir(os.path.join(cur_dir, 'agenda_baseline'))
         preprocess_agenda(os.path.join(cur_dir, 'agenda'), os.path.join(cur_dir, 'agenda_baseline'))
         print('preprocessed agenda!')
     if args.dailymail:
+        if not os.path.exists(os.path.join(cur_dir, 'dailymail_baseline')):
+            os.mkdir(os.path.join(cur_dir, 'dailymail_baseline'))
         preprocess_dailymail(os.path.join(cur_dir, 'dailymail'), os.path.join(cur_dir, 'dailymail_baseline'))
         print('preprocessed dailymail!')
     if args.rocstory:
+        if not os.path.exists(os.path.join(cur_dir, 'rocstory_baseline')):
+            os.mkdir(os.path.join(cur_dir, 'rocstory_baseline'))
         preprocess_rocstory(os.path.join(cur_dir, 'rocstory'), os.path.join(cur_dir, 'rocstory_baseline'))
         print('preprocessed rocstory!')
