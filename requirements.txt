@@ -1,3 +1,4 @@
 gitpython
 rouge_score
 sacrebleu
+psutil
